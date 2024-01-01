@@ -7,14 +7,13 @@ on:
     tags:
     - 'v*'
   schedule:
-    - cron: '0 23 * * *'
+    - cron: '0 2 * * *'
   watch:
     types: [started]
    
 jobs:
   checking:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start
     steps:
     - name: Setup timezone
       uses: zcong1993/setup-timezone@master
